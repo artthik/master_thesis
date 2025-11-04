@@ -91,8 +91,7 @@ jobs:
       run: |
         aws ecs run-task \
           --cluster thesis-cluster \
-          --launch-type FARGATE \
-          --network-configuration "awsvpcConfiguration={subnets=[subnet-09bc86b15d84b90bc],securityGroups=[sg-097f597131d817b53],assignPublicIp=ENABLED}" \
+          --launch-type EC2 \
           --task-definition thesis-task \
           --count 1 \
           --region us-east-1
